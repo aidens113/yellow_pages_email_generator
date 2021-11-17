@@ -52,12 +52,7 @@ def initdriver(proxy):
     chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    #prefs = {"profile.managed_default_content_settings.images": 2}
-    #chrome_options.add_experimental_option("prefs", prefs)
-    # chrome_options.add_argument('--user-data-dir=C:\\Users\\exoti\\AppData\\Local\\Google\\Chrome\\User Data\\')
-    #chrome_options.add_argument("--load-extension=C:\\Users\\exoti\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\hapgiopokcmcnjmakciaeaocceodcjdn\\6.4_0")
-    #chrome_options.add_argument(str('--profile-directory=Default'))
-    #chrome_options.add_argument("--start-maximized")
+    
     chrome_options.add_argument(str('--proxy-server=http://'+str(proxy)))
     #chrome_options.add_argument("--headless")   
     driver = webdriver.Chrome(executable_path='chromedriver.exe',options=chrome_options)
@@ -69,7 +64,7 @@ def initdriver(proxy):
 
 def startallthreads(threadnum):
     threads = []
-    allproxies = ['62.210.106.135:12210','62.210.106.135:12212','62.210.106.135:12211','62.210.106.135:12213','62.210.106.135:12214','62.210.106.135:12215','62.210.106.135:12216','62.210.106.135:12217','62.210.106.135:12218','62.210.106.135:12219']
+    allproxies = ['proxylist']
     thist = 0
     for i in range(threadnum):
         
